@@ -3,6 +3,7 @@ https://cloud.mongodb.com/v2/6501f2021b1b0832a6be678c#/security/network/accessLi
 
 
 user: email
+
 password: adiadi123
 
 
@@ -25,8 +26,11 @@ http://localhost:3000/register
 
 
 {
+
     "username": "adi",
+
     "password": "Aa123456"
+
 }
 
 after move to http://localhost:3000/ on the web

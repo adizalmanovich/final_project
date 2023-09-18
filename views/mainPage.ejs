@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link href="css/Feed.css" rel="stylesheet" />
+  </head>
+  <body>
+    <section class="aside-section">
+      <aside class="feed-aside">
+        <div class="header-logo-container">
+          <img
+            src="./resources/images/travely-transparent-background.png"
+            alt="country-img"
+            class="logo-img"
+          />
+        </div>
+        <nav id="main-navbar" class="main-navbar">
+          <a
+            id="main-navbar-item-feed"
+            href="/main/feed"
+            class="main-navbar-item main-navbar-item-active"
+            data-link
+            onclick="handleSidebarChange(event)"
+            title="Feed"
+            >Feed</a
+          >
+          <a
+            id="main-navbar-item-profile"
+            href="/main/profile"
+            class="main-navbar-item"
+            data-link
+            onclick="handleSidebarChange(event)"
+            title="Profile"
+            >Profile</a
+          >
+          <a
+            id="main-navbar-item-friends"
+            href="/main/friends"
+            class="main-navbar-item"
+            data-link
+            onclick="handleSidebarChange(event)"
+            title="Friends"
+            >Friends</a
+          >
+          <a
+            id="main-navbar-item-groups"
+            href="/main/groups"
+            class="main-navbar-item"
+            data-link
+            onclick="handleSidebarChange(event)"
+            title="Groups"
+            >Groups</a
+          >
+          <a
+            id="main-navbar-item-administration"
+            href="/main/administration"
+            class="main-navbar-item"
+            data-link
+            onclick="handleSidebarChange(event)"
+            title="Administration"
+            >Administration</a
+          >
+        </nav>
+      </aside>
+    </section>
+    <section id="main-data-section" class="main-data-section">
+      <footer class="feed-footer"></footer>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="js/mainPage.js"></script>
+  </body>
+</html>

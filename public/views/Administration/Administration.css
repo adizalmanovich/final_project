@@ -1,0 +1,28 @@
+.administration-main {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.administration-main-title {
+  color: white;
+  background-color: var(--dark-turquoise);
+  padding: 0.5em;
+  border-radius: 10px;
+  font-weight: 400;
+  font-size: 1.3rem;
+  width: 90%;
+  margin: 1em auto;
+}
+
+.administration-main-stats {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.administration-main-stats-item {
+  background-color: var(--turquoise);
+  padding: 0.8em;
+  border-radius: 20px;
+  color: white;
+}

@@ -11,14 +11,21 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link href="css/Feed.css" rel="stylesheet" />
+    <link href="../../views/Feed/Feed.css" rel="stylesheet" />
+    <link
+      href="../../views/Administration/Administration.css"
+      rel="stylesheet"
+    />
+    <link href="../../views/Friends/Friends.css" rel="stylesheet" />
+    <link href="../../views/Groups/Groups.css" rel="stylesheet" />
+    <link href="../../views/Profile/Profile.css" rel="stylesheet" />
   </head>
   <body>
     <section class="aside-section">
       <aside class="feed-aside">
         <div class="header-logo-container">
           <img
-            src="./resources/images/travely-transparent-background.png"
+            src="../../resources/images/travely-transparent-background.png"
             alt="country-img"
             class="logo-img"
           />
@@ -27,7 +34,7 @@
           <a
             id="main-navbar-item-feed"
             href="/main/feed"
-            class="main-navbar-item main-navbar-item-active"
+            class="main-navbar-item"
             data-link
             onclick="handleSidebarChange(event)"
             title="Feed"
@@ -76,6 +83,12 @@
       <footer class="feed-footer"></footer>
     </section>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="js/mainPage.js"></script>
+    <script src="../../views/Feed/Feed.js"></script>
+    <script src="../../views/Administration/Administration.js"></script>
+    <script src="../../views/Profile/Profile.js"></script>
+    <script src="../../views/Friends/Friends.js"></script>
+    <script src="../../views/Groups/Groups.js"></script>
+    <script src="../../views/MainPage/MainPage.js"></script>
+    <script type="module" src="../../views/MainPage/MainPageModule.js"></script>
   </body>
 </html>

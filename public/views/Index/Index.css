@@ -13,6 +13,9 @@ body {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   opacity: 1;
   transition: opacity 0.5s;
+  background-image: linear-gradient(white, rgb(90, 172, 178));
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .login-box-container {
@@ -33,7 +36,6 @@ body {
   z-index: 2;
   background-color: white;
   width: 40%;
-  height: 55%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -42,6 +44,13 @@ body {
   box-shadow: 0 0 8px rgb(224, 224, 224);
   min-width: 300px;
   min-height: 300px;
+  max-width: 400px;
+}
+
+.logo-img {
+  width: 150px;
+  padding: 1em;
+  margin-right: 2.8em;
 }
 
 .globe-login-img {
@@ -51,11 +60,13 @@ body {
   transform: translate(-50%, -50%);
   z-index: 1;
   width: 100%;
+  max-width: 750px;
   min-width: 500px;
 }
 
-.login-btn {
-  background-color: #60c5e0;
+.login-btn,
+.register-btn {
+  background-color: rgb(90, 172, 178);
   color: white;
   height: 40px;
   border-radius: 50px;
@@ -64,9 +75,15 @@ body {
   padding: 0 1em;
 }
 
-.login-btn:hover {
+.login-btn:hover,
+.register-btn:hover {
   cursor: pointer;
-  background-color: #54bedb;
+  background-color: rgb(80, 177, 184);
+}
+
+.register-btn {
+  text-decoration: none;
+  line-height: 2.5;
 }
 
 .login-inputs-container {
@@ -94,21 +111,24 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin-bottom: 0.8em;
 }
 
 .login-btns-container {
   display: flex;
   justify-content: space-evenly;
   width: 80%;
-  margin: 1.5em auto;
+  margin: 0.5em auto;
+  margin-bottom: 1em;
 }
 
-.login-btns-container button i {
+.login-btns-container button i,
+.login-btns-container a i {
   margin-right: 0.5em;
 }
 
 .login-btn-icon {
-  color: #2e88a1;
+  color: white;
   position: relative;
   transition: transform 0.5s linear;
 }

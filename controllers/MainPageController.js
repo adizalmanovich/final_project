@@ -1,5 +1,7 @@
+const path = require("path");
+
 const getMainPage = (req, res) => {
-  res.render("../views/mainPage.ejs", {});
+  res.sendFile(path.resolve("public", "views/MainPage/MainPage.html"));
 };
 
 module.exports = {

@@ -13,5 +13,4 @@ router.post('/register', validateFields, registerUser);
 // router.get("/logout", loginController.logout);
 // router.get("/", loginController.isLoggedIn, loginController.foo);
 // router.get("/", feedController.getFeedPage);
-
 module.exports = router;

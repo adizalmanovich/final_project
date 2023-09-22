@@ -1,5 +1,7 @@
+const path = require("path");
+
 const getFeedPage = (req, res) => {
-  res.render("../views/feed.ejs", {});
+  res.sendFile(path.resolve("public", "views/Feed/Feed.html"));
 };
 
 module.exports = {

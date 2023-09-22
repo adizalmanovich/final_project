@@ -1,3 +1,5 @@
+import { initAdministration } from "../Administration/AdministrationInit.js";
+
 $(() => {
   document.querySelector("body").classList.add("opacity");
   handlePageResizeForNavbar();
@@ -5,14 +7,6 @@ $(() => {
 
 window.onresize = (event) => {
   handlePageResizeForNavbar();
-};
-
-// To return to main page on refresh after using navbar
-window.onbeforeunload = (e) => {
-  window.setTimeout(() => {
-    window.location = "/main";
-  }, 0);
-  window.onbeforeunload = null; // To prevent infinite loop, that kills your browser
 };
 
 const handlePageResizeForNavbar = () => {
@@ -36,24 +30,6 @@ const handlePageResizeForNavbar = () => {
     document.getElementById("main-navbar-item-administration").innerHTML =
       '<i class="fa-solid fa-chart-simple"></i>';
   }
-};
-
-const handlePostLike = (event) => {
-  const classes = event.target.classList;
-  if (classes.contains("fa-regular")) classes.replace("fa-regular", "fa-solid");
-  else classes.replace("fa-solid", "fa-regular");
-};
-
-const handleSidebarChange = (event) => {
-  let currentElement = event.target;
-  if (event.target.tagName === "I")
-    currentElement = currentElement.parentElement;
-  const navbar = document.getElementById("main-navbar");
-  const feedNavbarItems = navbar.getElementsByClassName("main-navbar-item");
-  for (let i = 0; i < feedNavbarItems.length; i++) {
-    feedNavbarItems[i].classList.remove("main-navbar-item-active");
-  }
-  currentElement.classList.add("main-navbar-item-active");
 };
 
 const getHTML = async (path) => {
@@ -85,11 +61,15 @@ const navigateTo = (url) => {
 
 const router = async () => {
   const routes = [
-    { path: "/main/feed", view: await getHTML("/feed") },
-    { path: "/main/profile", view: await getHTML("/profile") },
-    { path: "/main/friends", view: await getHTML("/friends") },
-    { path: "/main/groups", view: await getHTML("/groups") },
-    { path: "/main/administration", view: await getHTML("/administration") },
+    { path: "/main/feed", pagePath: "/feed" },
+    { path: "/main/profile", pagePath: "/profile" },
+    { path: "/main/friends", pagePath: "/friends" },
+    { path: "/main/groups", pagePath: "/groups" },
+    {
+      path: "/main/administration",
+      pagePath: "/administration",
+      initPageFunc: initAdministration,
+    },
   ];
 
   // Test each route for potential match
@@ -112,17 +92,26 @@ const router = async () => {
   }
 
   //const view = new match.route.view(getParams(match));
-  if (match !== undefined)
-    document.querySelector("#main-data-section").innerHTML = match.route.view;
+  if (match !== undefined) {
+    document.querySelector("#main-data-section").innerHTML = await getHTML(
+      match.route.pagePath
+    );
+    if (match.route.initPageFunc !== undefined) match.route.initPageFunc();
+  }
 };
 
 window.addEventListener("popstate", router);
 
 document.addEventListener("DOMContentLoaded", () => {
   document.body.addEventListener("click", (e) => {
-    if (e.target.matches("[data-link]")) {
+    if (
+      e.target.matches("[data-link]") ||
+      e.target.parentElement.matches("[data-link]")
+    ) {
       e.preventDefault();
-      navigateTo(e.target.href);
+      navigateTo(
+        e.target.href == null ? e.target.parentElement.href : e.target.href
+      );
     }
   });
 

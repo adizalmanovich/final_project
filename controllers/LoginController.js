@@ -1,9 +1,10 @@
 const passport = require("passport");
 const User = require("../models/User");
 const bcrypt = require("bcryptjs");
+const path = require("path");
 
 const registerForm = (req, res) => {
-  res.render("register", {});
+  res.sendFile(path.resolve("public", "views/Register/Register.html"));
 };
 
 const registerUser = async (req, res) => {
@@ -31,7 +32,7 @@ const registerUser = async (req, res) => {
 };
 
 const getLoginPage = (req, res) => {
-  res.render("../views/login.ejs", {});
+  res.sendFile(path.resolve("public", "views/Index/Index.html"));
 };
 
 const loginUser = (req, res, next) => {

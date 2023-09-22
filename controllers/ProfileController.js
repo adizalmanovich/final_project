@@ -1,5 +1,7 @@
+const path = require("path");
+
 const getProfilePage = (req, res) => {
-  res.render("../views/profile.ejs", {});
+  res.sendFile(path.resolve("public", "views/Profile/Profile.html"));
 };
 
 module.exports = {

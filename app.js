@@ -5,9 +5,10 @@ const db = require('./config/db');
 const session = require('express-session');
 
 const app = express();
+const path = require("path");
 app.use(express.json());
 
-app.use(express.static(__dirname + "/public"));
+app.use("/", express.static(path.resolve(__dirname, "public")));
 app.use(session({
   secret: 'your-secret-key',
   resave: false,
@@ -17,16 +18,10 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-// app.use("/", express.static(path.resolve(__dirname, "public")));
-
-// app.get("/*", (req, res) => {
-//   res.sendFile(path.resolve("public", "Index.html"));
-// });
-
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: false }));
 
-// Routers init
+
 app.use("/", require("./routes/LoginRouter"));
 app.use("/main", require("./routes/MainPageRouter"));
 app.use("/feed", require("./routes/FeedRouter"));

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel</title>
+    <link rel="stylesheet" href="../../views/Index/Index.css" />
+    <link rel="stylesheet" href="../../views/Register/Register.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <main class="login-box-container">
+      <!-- <img
+        src="../../resources/images/globe-login.jpg"
+        class="globe-login-img"
+        alt="globe"
+      /> -->
+      <form class="register-form" action="/register" method="post">
+        <div class="login-inputs-container">
+          <div class="login-inputs-container-item">
+            <label for="firstName">First Name:</label>
+            <input
+              type="text"
+              placeholder="First Name"
+              name="firstName"
+              required
+            />
+          </div>
+          <div class="login-inputs-container-item">
+            <label for="lastName">Last Name:</label>
+            <input
+              type="text"
+              placeholder="Last Name"
+              name="lastName"
+              required
+            />
+          </div>
+          <div class="login-inputs-container-item">
+            <label for="email">Email:</label>
+            <input type="email" placeholder="Email" name="email" required />
+          </div>
+          <div class="login-inputs-container-item">
+            <label for="username">Username:</label>
+            <input
+              type="text"
+              placeholder="Username"
+              name="username"
+              required
+            />
+          </div>
+          <div class="login-inputs-container-item">
+            <label for="password">Password:</label>
+            <input
+              type="password"
+              placeholder="Password"
+              name="password"
+              required
+            />
+          </div>
+          <div class="login-inputs-container-item">
+            <label for="confirmPassword">Confirm Password:</label>
+            <input
+              type="password"
+              placeholder="Confirm Password"
+              name="confirmPassword"
+              required
+            />
+          </div>
+          <div class="register-btns-container">
+            <button type="submit" class="register-btn">
+              <i class="fa-solid fa-plane login-btn-icon"></i>Register
+            </button>
+          </div>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>

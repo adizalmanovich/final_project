@@ -1,5 +1,7 @@
+const path = require("path");
+
 const getFriendsPage = (req, res) => {
-  res.render("../views/friends.ejs", {});
+  res.sendFile(path.resolve("public", "views/Friends/Friends.html"));
 };
 
 module.exports = {

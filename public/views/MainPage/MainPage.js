@@ -29,3 +29,14 @@ const handleSidebarChange = (event) => {
   }
   currentElement.classList.add("main-navbar-item-active");
 };
+
+const logout = () => {
+  $.ajax({
+    method: "POST",
+    url: "/logout",
+    success: (result) => {},
+    error: (result) => {
+      showNotification(result.responseJSON.error, "danger");
+    },
+  });
+};

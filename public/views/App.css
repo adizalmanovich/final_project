@@ -1,0 +1,57 @@
+:root {
+  --green: rgb(31, 178, 31);
+  --light-green: rgb(52, 191, 98);
+  --dark-green: rgb(35, 169, 80);
+  --turquoise: rgb(90, 172, 178);
+  --dark-turquoise: rgb(80, 183, 191);
+  --orange: rgb(255, 143, 18);
+  --light-orange: rgb(244, 146, 33);
+  --beige: rgb(243, 208, 158);
+  --red: rgb(244, 27, 27);
+  --sidebar-width: 180px;
+  --search-item-size: 150px;
+}
+
+/* Preventing Bootstrap CSS to change UI */
+* {
+  -webkit-box-sizing: revert;
+  -moz-box-sizing: revert;
+  box-sizing: revert;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: white;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: white;
+}
+
+/* ---- custom scrollbar ---- */
+
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--dark-turquoise);
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--dark-turquoise);
+}

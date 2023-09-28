@@ -1,0 +1,57 @@
+.all-groups {
+    display: flex;
+    padding: 0.8em;
+    position: relative;
+    margin: 0.5em;
+    border-radius: 10px;
+    width: 90%;
+    margin: 1em auto;
+    overflow-x: scroll;
+  }
+
+  .group:first-child {
+    margin-left: 0;
+  }
+  
+  .group {
+   height: 200px;
+  width: 140px;
+    border-radius: 10px;
+    position: relative;
+    margin-left: 1em;
+    padding: 0.2em;
+    border: 3px solid var(--dark-turquoise);
+  }
+
+  .group:hover {
+    background-color: rgb(255, 255, 255, 0.5);
+    cursor: pointer;
+  }
+  
+  .group-img {
+    height: 100px;
+    width: 140px;
+    border-radius: 10px;
+  }
+  
+  .group-flag-img {
+    width: 30px;
+    height: 30px;
+    border: 3px solid white;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+  }
+
+  .plus-icon-container {
+    padding: 0.6em;
+    height: 10px;
+    width: 10px;
+    background-color: white;
+    border-radius: 10px;
+    margin-right: 0.5em;
+    color: var(--turquoise);
+    display: flex;
+    align-items: center;
+  }

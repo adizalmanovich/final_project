@@ -10,11 +10,11 @@ const registerForm = (req, res) => {
 const registerUser = async (req, res) => {
   try {
     const { username, password } = req.body;
-    console.log('Received registration request with body:', req.body);
+    console.log("Received registration request with body:", req.body);
     // Check if the username already exists
     const existingUser = await User.findOne({ username });
     if (existingUser) {
-      return res.status(400).send({ error: 'Username already exists' });
+      return res.status(400).send({ error: "Username already exists" });
     }
 
     // Hash the password
@@ -24,8 +24,8 @@ const registerUser = async (req, res) => {
     // Create a new user
     const newUser = new User({ username, password: hashedPassword });
     await newUser.save();
-    
-    res.status(201).send({ message: 'User registered successfully' });
+
+    res.status(201).send({ message: "User registered successfully" });
   } catch (err) {
     res.status(400).send({ error: err.message });
   }
@@ -36,12 +36,12 @@ const getLoginPage = (req, res) => {
 };
 
 const loginUser = (req, res, next) => {
-  passport.authenticate('local', (err, user, info) => {
+  passport.authenticate("local", (err, user, info) => {
     if (err) {
-      return next(err); 
+      return next(err);
     }
     if (!user) {
-      return res.status(401).send({ error: 'Authentication failed' });
+      return res.status(401).send({ error: "Authentication failed" });
     }
     req.login(user, (err) => {
       if (err) {
@@ -52,15 +52,9 @@ const loginUser = (req, res, next) => {
   })(req, res, next);
 };
 
-// const login = (req, res) => {
-//   res.redirect("/main");
-// };
-
-
-
 module.exports = {
   loginUser,
   getLoginPage,
   registerForm,
-  registerUser
+  registerUser,
 };

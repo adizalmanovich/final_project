@@ -1,24 +1,23 @@
 <section class="profile-container">
   <header class="profile-header">
+    <a class="back-to-arrow-link" href="/main/groups" data-link title="Groups"
+      ><i class="fa-solid fa-arrow-left"></i
+    ></a>
     <div class="profile-details-container">
       <div id="profile-details-profile-image-container"></div>
       <div class="profile-details-data">
         <div class="profile-details-data-stats">
           <div class="profile-details-data-stats-item">
-            <div id="user-number-of-posts"></div>
+            <div id="group-number-of-posts"></div>
             <div class="profile-details-data-stats-item-title">Posts</div>
           </div>
           <div class="profile-details-data-stats-item">
-            <div id="user-number-of-friends"></div>
-            <div class="profile-details-data-stats-item-title">Friends</div>
-          </div>
-          <div class="profile-details-data-stats-item">
-            <div id="user-number-of-groups"></div>
-            <div class="profile-details-data-stats-item-title">Groups</div>
+            <div id="group-number-of-members"></div>
+            <div class="profile-details-data-stats-item-title">Members</div>
           </div>
         </div>
         <div
-          id="user-profile-description"
+          id="group-profile-description"
           class="profile-details-data-description"
         ></div>
       </div>
@@ -28,7 +27,7 @@
     <div class="create-post-container">
       <form onsubmit="createPost(event)">
         <div
-          id="create-post-user-profile-img-container"
+          id="create-post-group-profile-img-container"
           class="create-post-user-profile-img-container"
         ></div>
         <textarea

@@ -1,4 +1,7 @@
 import { initAdministration } from "../Administration/AdministrationInit.js";
+import { initFriend } from "../Friends/FriendInit.js";
+import { initGroup } from "../Group/GroupInit.js";
+import { initProfile } from "../Profile/ProfileInit.js";
 
 $(() => {
   document.querySelector("body").classList.add("opacity");
@@ -62,9 +65,19 @@ const navigateTo = (url) => {
 const router = async () => {
   const routes = [
     { path: "/main/feed", pagePath: "/feed" },
-    { path: "/main/profile", pagePath: "/profile" },
+    { path: "/main/profile", pagePath: "/profile", initPageFunc: initProfile },
     { path: "/main/friends", pagePath: "/friends" },
+    {
+      path: "/main/friends/profile",
+      pagePath: "/friends/profile",
+      initPageFunc: initFriend,
+    },
     { path: "/main/groups", pagePath: "/groups" },
+    {
+      path: "/main/groups/group",
+      pagePath: "/groups/group",
+      initPageFunc: initGroup,
+    },
     {
       path: "/main/administration",
       pagePath: "/administration",
@@ -106,11 +119,16 @@ document.addEventListener("DOMContentLoaded", () => {
   document.body.addEventListener("click", (e) => {
     if (
       e.target.matches("[data-link]") ||
-      e.target.parentElement.matches("[data-link]")
+      e.target.parentElement.matches("[data-link]") ||
+      e.target.parentElement.parentElement.matches("[data-link]")
     ) {
       e.preventDefault();
       navigateTo(
-        e.target.href == null ? e.target.parentElement.href : e.target.href
+        e.target.href == null
+          ? e.target.parentElement.href == null
+            ? e.target.parentElement.parentElement.href
+            : e.target.parentElement.href
+          : e.target.href
       );
     }
   });

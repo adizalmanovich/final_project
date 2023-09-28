@@ -1,0 +1,34 @@
+:root {
+  --groups-search-item-size: 150px;
+}
+
+.groups-container {
+  width: 95%;
+  margin: 0 auto;
+  max-width: 1400px;
+}
+
+.groups-main {
+  width: 95%;
+  margin: 1em auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow-y: scroll;
+  max-height: calc(100vh - 100px);
+}
+
+.groups-header {
+  width: 90%;
+  margin: auto;
+  height: 50px;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 0.4em;
+}
+
+@media screen and (max-width: 630px) {
+  .groups-main {
+    height: calc(100vh - 120px);
+  }
+}

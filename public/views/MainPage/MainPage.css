@@ -1,0 +1,131 @@
+.back-to-arrow-link {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(240, 237, 237);
+  border-radius: 50%;
+  margin: 1em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--turquoise);
+}
+
+.back-to-arrow-link:hover {
+  background-color: rgb(228, 224, 224);
+}
+
+.search-item {
+  width: var(--search-item-size);
+  height: var(--search-item-size);
+  max-width: var(--search-item-size);
+  max-height: var(--search-item-size);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.2em;
+  padding: 0.5em;
+  border-radius: 10px;
+}
+
+.search-item:hover {
+  cursor: pointer;
+  background-color: rgb(255, 255, 255, 0.4);
+}
+
+.search-item-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.search-item-default-image {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--turquoise);
+  color: white;
+}
+
+.search-item-text {
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+  background-color: var(--turquoise);
+  width: 90%;
+  margin-top: 0.5em;
+  border-radius: 20px;
+  padding: 0.3em 0.4em;
+}
+
+.search-something {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 160px;
+  height: 160px;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.search-something i {
+  margin-bottom: 1em;
+  margin-right: 0.6em;
+}
+
+a {
+  text-decoration: none;
+}
+
+.logout-btn {
+  position: absolute;
+  bottom: 2em;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.7em 1em 0.7em 1em;
+  font-size: 1rem;
+  background-color: white;
+  color: var(--turquoise);
+  border: none;
+  border-radius: 20px;
+}
+
+.logout-btn:hover {
+  cursor: pointer;
+  color: white;
+  background-color: var(--turquoise);
+}
+
+.navbar-logout-btn {
+  display: none;
+}
+
+.aside-logout-btn {
+  display: block;
+}
+
+@media screen and (max-width: 630px) {
+  .navbar-logout-btn {
+    position: relative;
+    transform: translateX(0);
+    left: auto;
+    bottom: auto;
+    padding: 1em !important;
+  }
+
+  .aside-logout-btn {
+    display: none;
+  }
+}
